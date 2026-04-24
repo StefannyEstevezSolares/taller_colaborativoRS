@@ -1,0 +1,14 @@
+{
+    "Arroz": {
+        "Precio": 50,
+        "Cantidad": 50
+    },
+    "Leche": {
+        "Precio": 75,
+        "Cantidad": 100
+    },
+    "Cacao": {
+        "Precio": 45,
+        "Cantidad": 45
+    }
+}
