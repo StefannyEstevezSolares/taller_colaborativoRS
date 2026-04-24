@@ -54,3 +54,24 @@ Ingrese un número válido: """))
             
             else:
                 print("Opción no válida, intente de nuevo")
+
+
+def consultar_productos():
+
+    datos = leer_json(archivo_productos)
+
+    opc = 0
+    while True:
+        try:
+          opc = int(input(""" Presione "1" para consultar productos o "2" para volver:"""))
+        except ValueError:
+            print("Por favor, ingrese un número válido.")
+
+        if opc == 1:
+            nombre = input("Ingrese el nombre del producto").strip().title()
+            for clave, valores in datos.items():
+                if nombre == clave:
+                    print(f" Datos del producto: {nombre} - {valores}")
+
+        elif opc == 2: 
+            break
