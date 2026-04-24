@@ -54,3 +54,26 @@ Ingrese un número válido: """))
             
             else:
                 print("Opción no válida, intente de nuevo")
+
+
+def agregar_producto():
+    
+    while True:
+
+        datos = leer_json(archivo_productos)
+        nombre_producto = input("Ingrese el nombre del producto").strip().title()
+        
+        try:
+            precio = int(input("Ingrese el precio por unidad del producto"))
+            cantidad = int(input("Ingrese la cantidad de productos en stock"))
+        
+        except:
+            print("Ingrese una cantidad")
+
+        datos [nombre_producto] = {
+
+            "Precio" : precio,
+            "Cantidad": cantidad,
+        }
+
+        escribir_json(archivo_productos, datos)
