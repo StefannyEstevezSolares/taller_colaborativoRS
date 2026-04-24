@@ -7,8 +7,16 @@
         "Precio": 75,
         "Cantidad": 100
     },
-    "Cacao": {
-        "Precio": 45,
-        "Cantidad": 45
+    "Cafe": {
+        "Precio": 20,
+        "Cantidad": 100
+    },
+    "Miel": {
+        "Precio": 22,
+        "Cantidad": 65
+    },
+    "Aceite": {
+        "Precio": 65,
+        "Cantidad": 80
     }
 }
