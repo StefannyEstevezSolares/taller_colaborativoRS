@@ -13,4 +13,36 @@ def escribir_json(archivito, contenido):
     with open(archivito, "w")as archivo:
         guardar = dumps(contenido, indent=4)
         archivo.write(guardar)
-        
+
+
+def eliminar_producto():
+    productos = leer_json(archivo_productos)
+    eliminar_producto = input("Ingrese el nombre del producto: ").strip().title()
+
+    if eliminar_producto not in productos: 
+        print("Producto no existe")
+        return
+    
+    else: 
+        print(productos[eliminar_producto])
+
+    while True:
+            opc = int (input("""Desea eliminar el producto del inventario
+                             
+                             1. Si
+                             2. Volver
+    
+Ingrese un número válido: """))
+            
+
+            if opc == 1:
+                del productos[eliminar_producto]
+                escribir_json(archivo_productos, productos)
+                print("Producto eliminado correctamente")
+                break
+            
+            elif opc == 2:
+                break
+            
+            else:
+                print("Opción no válida, intente de nuevo")
