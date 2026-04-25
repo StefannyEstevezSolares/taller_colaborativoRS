@@ -1,5 +1,5 @@
 from menu_visual import menu_visual
-from funciones import agregar_producto, consultar_productos, actualizar_cantidad, eliminar_productos
+from funciones import agregar_producto, consultar_productos, actualizar_cantidad, eliminar_producto, valor_total_inventario
 
 def main_menu():
 
@@ -21,10 +21,10 @@ def main_menu():
             actualizar_cantidad()
 
         elif opc == 4:
-            eliminar_productos()
+            eliminar_producto()
 
         elif opc == 5:
-            calcular_inventario_total()
+            valor_total_inventario()
 
         elif opc == 6:
             break
