@@ -15,6 +15,14 @@ def escribir_json(archivito, contenido):
         archivo.write(guardar)
 
 
+def valor_total_inventario():
+    productos = leer_json(archivo_productos)
+
+    total = sum(datos["Precio"] * datos["Cantidad"] for datos in productos.values())
+
+    print(f"El valor total del inventario es: Q {total:,.2f}")
+
+
 def eliminar_producto():
     productos = leer_json(archivo_productos)
     eliminar_producto = input("Ingrese el nombre del producto: ").strip().title()
