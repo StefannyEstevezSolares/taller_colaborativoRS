@@ -61,14 +61,25 @@ def agregar_producto():
     while True:
 
         datos = leer_json(archivo_productos)
-        nombre_producto = input("Ingrese el nombre del producto").strip().title()
+        nombre_producto = input("Ingrese el nombre del producto: ").strip().title()
+
+        if nombre_producto == "":
+            print("Ingrese un nombre de producto válido")
+            continue
+
+        if nombre_producto in datos:
+            print("El producto ya existe en el inventario")
+            continue
         
-        try:
-            precio = int(input("Ingrese el precio por unidad del producto"))
-            cantidad = int(input("Ingrese la cantidad de productos en stock"))
-        
-        except:
-            print("Ingrese una cantidad")
+        while True:
+            try:
+                precio = int(input("Ingrese el precio por unidad del producto: "))
+                cantidad = int(input("Ingrese la cantidad de productos en stock: "))
+                break
+            except:
+                print("Ingrese una cantidad valida")
+                continue
+                
 
         datos [nombre_producto] = {
 
@@ -77,3 +88,4 @@ def agregar_producto():
         }
 
         escribir_json(archivo_productos, datos)
+        break
