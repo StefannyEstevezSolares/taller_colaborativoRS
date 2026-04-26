@@ -32,7 +32,7 @@ Como se utilizan los súbmenú de haber alguno.
 
 #### Comando de ejecución del programa
 ``` 
-main.ejemplo.py
+main ejemplo.py
 ```
 
 > [!NOTE] 
@@ -56,9 +56,16 @@ main.ejemplo.py
 
 - El aplicativo permite modificar la cantidad disponible de un producto existente (el usuario debe ingresar el nombre del product y la nueva cantidad). 
 
+- El aplicativo permite eliminar un producto existente por su nombre.
 
->Autor : Stefanny Estevez y Randohl Tecun
+- El aplicativo permite calcular el total de los productos en el inventario.
 
+
+# Autors : 
+**Stefanny Estevez**
 [Github:](https://github.com/StefannyEstevezSolares/)
 
-![Kirby](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdY6qFAEtUpVLXdsBj30hNfLklKXiwHFkxIA&s)
+**Randohl Estuardo Tecún**
+[Github:](https://github.com/Randolh/)
+
+![Kirby](/assets/kirby_pb.png)
