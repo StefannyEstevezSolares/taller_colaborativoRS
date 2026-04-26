@@ -5,7 +5,6 @@ La aplicación permite administrar los productos de una tienda.
 
 ## Tabla de contenido
 
-
 |Número|Contenido|Descripción|
 |---|---|---|
 |1|Agregar producto|se agrega nombre, precio, cantidad|
@@ -59,6 +58,11 @@ main ejemplo.py
 - El aplicativo permite eliminar un producto existente por su nombre.
 
 - El aplicativo permite calcular el total de los productos en el inventario.
+
+
+## Screenshot
+**Evidencia reset**
+![Screenshot](/assets/screenshot_reset.jpg)
 
 
 # Autors : 
