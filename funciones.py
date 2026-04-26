@@ -25,6 +25,10 @@ def escribir_json(archivito, contenido):
 def valor_total_inventario():
     productos = leer_json(archivo_productos)
 
+    if not productos:
+        print("No hay productos en el inventario para calcular el valor total.")
+        return
+
     total = sum(datos["Precio"] * datos["Cantidad"] for datos in productos.values())
 
     print(f"El valor total del inventario es: Q {total:,.2f}")
@@ -32,6 +36,11 @@ def valor_total_inventario():
 
 def eliminar_producto():
     productos = leer_json(archivo_productos)
+
+    if not productos:
+        print("No hay productos en el inventario para eliminar.")
+        return
+
     eliminar_producto = input("Ingrese el nombre del producto: ").strip().title()
 
     if eliminar_producto not in productos: 
@@ -66,7 +75,6 @@ Ingrese un número válido: """))
 def agregar_producto():
     
     while True:
-
         datos = leer_json(archivo_productos)
         nombre_producto = input("Ingrese el nombre del producto: ").strip().title()
 
@@ -147,6 +155,10 @@ Ingrese un número válido: """))
 def consultar_productos():
 
     datos = leer_json(archivo_productos)
+
+    if datos == {} or datos is None:
+        print("No hay productos en el inventario para consultar.")
+        return
 
     opc = 0
     while True:
