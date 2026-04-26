@@ -92,7 +92,12 @@ def agregar_producto():
 
 def actualizar_cantidad():
     productos = leer_json(archivo_productos)
-    agregar_producto = input("Ingrese el nombre del producto")
+
+    if not productos:
+        print("No hay productos en el inventario para actualizar.")
+        return
+    
+    agregar_producto = input("Ingrese el nombre del producto: ").strip().title()
 
     if agregar_producto not in productos: 
         print("Producto no existe")
@@ -101,29 +106,35 @@ def actualizar_cantidad():
     else: 
         print(productos[agregar_producto])
 
-    opc = 0
-
     while True:
-
+        try:
             opc = int (input("""Desea agregar una cantidad al inventario
                              
                              1. Si
-                             2. Volver"""))
+                             2. Volver
     
-            print("Ingrese un número válido")
+Ingrese un número válido: """))
+        except ValueError:
+            print("Por favor, ingrese un número válido.")
+            continue
             
 
-            if opc == 1:
-                agregar = int(input("Cuantas unidades deseas agregar?"))
-                productos[agregar_producto]["Cantidad"] += agregar
-                escribir_json(archivo_productos, productos)
-                print("Cantidad agregada correctamente")
+        if opc == 1:
+            agregar = int(input("Ingrese la cantidad de unidades: "))
 
-            elif opc == 2:
+            if agregar < 0:
+                print("Ingrese una cantidad válida")
                 break
 
-            else:
-                print("Opción no válida, intente de nuevo")
+            productos[agregar_producto]["Cantidad"] = agregar
+            escribir_json(archivo_productos, productos)
+            print("Cantidad agregada correctamente")
+            break
+        elif opc == 2:
+            break
+
+        else:
+            print("Opción no válida, intente de nuevo")
 
 
 def consultar_productos():
